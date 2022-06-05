@@ -10,7 +10,7 @@ $requestData = $_REQUEST;
 if(empty($requestData['NOME'])){
     //variavel vazia retornar erro
     $dados  = array(
-        "tipo" => 'erro',
+        "tipo" => 'error',
         "mensagem" => 'O meu consagrado me ajuda a te ajudar completa os bagui.'
 
     );
@@ -30,7 +30,7 @@ if(empty($requestData['NOME'])){
     ':a' => utf8_decode($requestData['NOME'])
 ));
 $dados  = array(
-    "tipo" => 'succes',
+    "tipo" => 'success',
     "mensagem" => 'Ta registrado meu consagrado'
 
 );
@@ -53,15 +53,15 @@ $dados  = array(
     ':a' => utf8_decode($requestData['NOME'])
 ));
 $dados  = array(
-    "tipo" => 'succes',
-    "mensagem" => 'registrado atualizado meu consagrado'
+    "tipo" => 'success',
+    "mensagem" => 'registro atualizado meu consagrado'
 
 );
 
 
         }catch(PDOException $e){
             $dados  = array(
-                "tipo" => 'erro',
+                "tipo" => 'error',
                 "mensagem" => 'Não foi pra salvar: '.$e
 
         
