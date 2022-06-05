@@ -14,7 +14,7 @@ $(document).ready(function() {
             url: 'src/tipo/modelo/salvar-tipo.php',
             sucess: function(dados) {
                 Swal.fire({
-                    title: 'SysRifa',
+                    title: 'rifasoriginais',
                     text: dados.mensagem,
                     icon: dados.tipo,
                     confirmButtonText: 'OK'

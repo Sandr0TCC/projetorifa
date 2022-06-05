@@ -19,7 +19,7 @@ if(empty($requestData['NOME'])){
 } else {
     //se estiver preenchidos
     $ID = isset($requestData['ID']) ? $requestData['ID'] : '';
-    $operacao = isset(requestData['operacao']) ? $requestData['operacao'] : '';
+    $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
 
     //verificação cadastro
     if($operacao == 'insert'){
