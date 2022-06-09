@@ -7,7 +7,7 @@ include('../../conexao/conn.php');
 $requestData = $_REQUEST;
 
 //vrificação de campos obrigatorios
-if(empty($requestData['NOME'])){
+if(empty($requestData['NOME']) || empty($requestData['CELULAR'])){
     //variavel vazia retornar erro
     $dados  = array(
         "tipo" => 'error',
@@ -25,9 +25,11 @@ if(empty($requestData['NOME'])){
     if($operacao == 'insert'){
         //insert banco
         try{
-            $stmt = $pdo->prepare('INSERT INTO TIPO (NOME) VALUES (:a)');
+            $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME, CELULAR) VALUES (:a, :b)');
             $stmt->execute(array(
-    ':a' => utf8_decode($requestData['NOME'])
+    ':a' => utf8_decode($requestData['NOME']),
+    ':b' => utf8_decode($requestData['CELULAR'])
+
 ));
 $dados  = array(
     "tipo" => 'success',
@@ -47,10 +49,11 @@ $dados  = array(
     } else{
         //se a operação vir vazia fazer update
         try{
-            $stmt = $pdo->prepare('UPDATE TIPO SET NOME = :a WHERE ID = :id');
+            $stmt = $pdo->prepare('UPDATE TIPO SET NOME = :a, CELULAR = :b WHERE ID = :id');
             $stmt->execute(array(
                 ':id' => $ID, 
-    ':a' => utf8_decode($requestData['NOME'])
+    ':a' => utf8_decode($requestData['NOME']),
+    ':b' => utf8_decode($requestData['CELULAR'])
 ));
 $dados  = array(
     "tipo" => 'success',

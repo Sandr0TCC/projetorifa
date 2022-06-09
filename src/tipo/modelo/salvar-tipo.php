@@ -62,7 +62,7 @@ $dados  = array(
         }catch(PDOException $e){
             $dados  = array(
                 "tipo" => 'error',
-                "mensagem" => 'Não foi pra salvar: '.$e
+                "mensagem" => 'Não foi possivel atualizar: '.$e
 
         
             );

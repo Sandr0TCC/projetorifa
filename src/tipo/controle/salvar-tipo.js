@@ -2,6 +2,7 @@ $(document).ready(function() {
 
     $('.btn-salvar').click(function(e) {
         e.preventDefault()
+
         let dados = $('#form-tipo').serialize()
 
         dados += `&operacao=${$('.btn-salvar').attr('data-operation')}`
@@ -12,7 +13,7 @@ $(document).ready(function() {
             assync: true,
             data: dados,
             url: 'src/tipo/modelo/salvar-tipo.php',
-            sucess: function(dados) {
+            success: function(dados) {
                 Swal.fire({
                     title: 'rifasoriginais',
                     text: dados.mensagem,
