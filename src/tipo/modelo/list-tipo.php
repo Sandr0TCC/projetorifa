@@ -8,7 +8,7 @@ include('../..conexao/conn.php');
 $requestData = $_REQUEST;
 
 // obter as colunas que  etão sendo requisitados
-$colunas = $requestData['colunas'];
+$colunas = $requestData['columns'];
 
 // preparar o comnado sql para on=btenção dos rregistros existentes
 $sql = "SELECT ID, NOME FROM TIPO WHERE 1=1 ";
@@ -19,7 +19,7 @@ $qtdeLinhas = $resultado->rowCount();
 
 // verificar se existe algum filtro determinado pelo usuario
 $filtro = $requestData['search']['value'];
-if(!empty($filtro)){
+if( !empty($filtro ) {
     // montar expressão logica
     $sql .= " AND (ID LIKE '$filtro%' ";
     $sql .= " OR NOME LIKE '$filtro%') ";
@@ -30,7 +30,7 @@ $resultado = $pdo->query($sql);
 $totalFiltrados = $resultado->rowCount();
 
 // Obter os valor para ordenação ORDER BY
-$colunaOrdem = $requestData['orer'][0]['columns'];
+$colunaOrdem = $requestData['orer'][0]['column'];
 $ordem = $colunas[$colunaOrdem]['data'];
 $direcao = $requestData['order'][0]['dir'];
 
