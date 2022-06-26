@@ -12,6 +12,8 @@ $(document).ready(function() {
 
         let ID = `ID=${$(this).attr('id')}`
 
+        $('.btn-salvar').removeAttr('data-operation')
+
         $.ajax({
             type: 'POST',
             dataType: 'json',
