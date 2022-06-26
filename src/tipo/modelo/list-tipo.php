@@ -5,7 +5,7 @@
 include('../..conexao/conn.php');
 
 //  obter a requisição
-$requestData = $_REQUEST
+$requestData = $_REQUEST;
 
 // obter as colunas que  etão sendo requisitados
 $colunas = $requestData['colunas'];
