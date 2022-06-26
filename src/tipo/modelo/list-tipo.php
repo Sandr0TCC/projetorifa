@@ -2,7 +2,7 @@
 
 
 // realizar a conexão com o bd
-include('../..conexao/conn.php');
+include('../../conexao/conn.php');
 
 //  obter a requisição
 $requestData = $_REQUEST;
@@ -19,7 +19,7 @@ $qtdeLinhas = $resultado->rowCount();
 
 // verificar se existe algum filtro determinado pelo usuario
 $filtro = $requestData['search']['value'];
-if( !empty($filtro )) {
+if( !empty( $filtro ) ){
     // montar expressão logica
     $sql .= " AND (ID LIKE '$filtro%' ";
     $sql .= " OR NOME LIKE '$filtro%') ";
@@ -30,7 +30,7 @@ $resultado = $pdo->query($sql);
 $totalFiltrados = $resultado->rowCount();
 
 // Obter os valor para ordenação ORDER BY
-$colunaOrdem = $requestData['orer'][0]['column'];
+$colunaOrdem = $requestData['order'][0]['column'];
 $ordem = $colunas[$colunaOrdem]['data'];
 $direcao = $requestData['order'][0]['dir'];
 
@@ -54,4 +54,5 @@ $json_data = array(
     "data" => $dados
 );
 
+// retornar o objeto json para o datatable
 echo json_encode($json_data);

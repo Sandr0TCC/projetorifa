@@ -6,7 +6,7 @@ $(document).ready(function() {
             "url": "src/tipo/modelo/list-tipo.php",
             "type": "POST"
         },
-        "columns": [{
+        "column": [{
                 "data": 'ID',
                 "classname": 'text-center'
             },
@@ -19,7 +19,7 @@ $(document).ready(function() {
                 "classname": 'text-center',
                 "orderable": false,
                 "searchable": false,
-                "render": function(data, typ, row, meta) {
+                "render": function(data, type, row, meta) {
                     return `
                     <button id="${data}" class="btn btn-info btn-view">Visualizar</button>
                     <button id="${data}" class="btn btn-warning btn-edit">Editar</button>
