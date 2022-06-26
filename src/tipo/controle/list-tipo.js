@@ -8,25 +8,26 @@ $(document).ready(function() {
         },
         "columns": [{
                 "data": 'ID',
-                "classname": 'text-center'
+                "className": 'text-center'
             },
             {
                 "data": 'NOME',
-                "classname": 'text-center'
+                "className": 'text-center'
             },
             {
                 "data": 'ID',
-                "classname": 'text-center',
+                "className": 'text-center',
                 "orderable": false,
                 "searchable": false,
                 "render": function(data, type, row, meta) {
                     return `
-                    <button id="${data}" class="btn btn-info btn-view">Visualizar</button>
-                    <button id="${data}" class="btn btn-warning btn-edit">Editar</button>
-                    <button id="${data}" class="btn btn-danger btn-delete">Excluir</button>
-                    `
+                <button id="${data}" class="btn btn-info btn-view">Visualizar</button>
+                <button id="${data}" class="btn btn-warning btn-edit"> Editar</button>
+                <button id="${data}" class="btn btn-danger btn-delete"> Excluir</button>
+                `
                 }
             }
+
         ]
     })
 })
