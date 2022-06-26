@@ -19,7 +19,7 @@ $qtdeLinhas = $resultado->rowCount();
 
 // verificar se existe algum filtro determinado pelo usuario
 $filtro = $requestData['search']['value'];
-if( !empty($filtro ) {
+if( !empty($filtro )) {
     // montar expressão logica
     $sql .= " AND (ID LIKE '$filtro%' ";
     $sql .= " OR NOME LIKE '$filtro%') ";
