@@ -2,7 +2,7 @@
 
 
 // realizar a conexão com o bd
-include(../..conexao/conn.php);
+include('../..conexao/conn.php');
 
 //  obter a requisição
 $requestData = $_REQUEST
