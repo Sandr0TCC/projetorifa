@@ -6,7 +6,7 @@ $(document).ready(function() {
         let ID = `ID=${$(this).attr('id')}`
 
         Swal.fire({
-            title: 'SysRifa',
+            title: 'Rifas Originais',
             text: 'Deseja realmente excluir este registro?',
             icon: 'question',
             showCancelButton: true,
@@ -22,7 +22,7 @@ $(document).ready(function() {
                     url: 'src/tipo/modelo/delete-tipo.php',
                     success: function(dados) {
                         Swal.fire({
-                            title: 'SysRifa',
+                            title: 'Rifas Originais',
                             text: dados.mensagem,
                             icon: dados.tipo,
                             confirmButtonText: 'OK'
