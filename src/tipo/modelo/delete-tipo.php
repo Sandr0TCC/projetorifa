@@ -12,7 +12,7 @@ $resultado = $pdo->query($sql);
 if($resultado){
     $dados = array(
         'tipo' => 'success',
-        'mensagem' => ' Registro excluido com sucesso.'
+        'mensagem' => 'Registro excluido com sucesso.'
     );
 }else{
     $dados = array(

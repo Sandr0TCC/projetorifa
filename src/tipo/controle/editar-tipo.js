@@ -30,7 +30,7 @@ $(document).ready(function() {
                     $('#modal-tipo').modal('show')
                 } else {
                     Swal.fire({
-                        title: 'Rifas Originais',
+                        title: 'SysRifa',
                         text: dados.mensagem,
                         icon: dados.tipo,
                         confirmButtonText: 'OK'

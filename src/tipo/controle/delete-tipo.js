@@ -6,7 +6,7 @@ $(document).ready(function() {
         let ID = `ID=${$(this).attr('id')}`
 
         Swal.fire({
-            title: 'Rifas Originais',
+            title: 'Rifas originais',
             text: 'Deseja realmente excluir este registro?',
             icon: 'question',
             showCancelButton: true,
